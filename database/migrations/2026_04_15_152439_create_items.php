@@ -20,6 +20,7 @@ return new class extends Migration
                   ->onDelete('cascade');
 
             $table->string('nama_item', 100);
+            $table->timestamps();
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('item');
     }
 };

@@ -126,7 +126,7 @@
                 @foreach($belanja as $item)
                 <tr class="border">
 
-                    <td class="text-center">{{ $item->hari }}</td>
+                    <td class="text-center">{{ \Carbon\Carbon::parse($item->tanggal)->locale('id')->isoFormat('dddd') }}</td>
 
                     <td class="text-center">
                         {{ \Carbon\Carbon::parse($item->tanggal)->format('d/m/Y') }}
@@ -134,9 +134,11 @@
 
                     <td class="text-center">{{ $item->supplier }}</td>
 
-                    <td>{{ $item->pengeluaran_belanja }}</td>
+                    <td class="text-center">
+                        {{ $item->pengeluaran_belanja }}
+                    </td>
 
-                    <td class="text-right">
+                    <td class="text-center">
                         Rp {{ number_format($item->total_belanja,0,',','.') }}
                     </td>
 

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Kategori;
+use App\Models\Menu;
 use Illuminate\Database\Eloquent\Model;
 
-class Items extends Model
+class Item extends Model
 {
     protected $table = 'item';
 

@@ -52,8 +52,7 @@
                         <th class="border border-black p-3 text-center">Hari</th>
                         <th class="border border-black p-3 text-center">Tanggal</th>
                         <th class="border border-black p-3 text-center">Supplier</th>
-                        <th class="border border-black p-3 text-center">Jumlah</th>
-                        <th class="border border-black p-3 text-center">Pengeluaran Belanja</th>
+                        <th class="border border-black p-3 text-center">Pengeluaran_Belanja</th>
                         <th class="border border-black p-3 text-center">Total Biaya</th>
                     </tr>
                 </thead>
@@ -75,11 +74,11 @@
                         </td>
 
                         <td class="border border-black p-3 text-center">
-                            {{ $b->jumlah_belanja }}
+                            {{ $b->pengeluaran_belanja }}
                         </td>
 
                         <td class="border border-black p-3 text-center">
-                            {{ $b->Pengeluaran_Belanja}}
+                            {{ $b->total_belanja }}
                         </td>
                     </tr>
                     @endforeach
@@ -89,7 +88,7 @@
                 <!-- REKAP TOTAL -->
                 <tfoot>
                     <tr class="font-bold">
-                        <td colspan="5" class="border border-black p-3 text-right">
+                        <td colspan="4" class="border border-black p-3 text-right">
                             Total
                         </td>
                         <td class="border border-black p-3 text-center">
