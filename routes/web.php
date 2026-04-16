@@ -9,6 +9,7 @@ use App\Http\Controllers\OmprengController;
 use App\Http\Controllers\OperasionalController;
 use App\Http\Controllers\RekapOperasional;
 use App\Http\Controllers\ItemMenu;
+use App\Http\Controllers\InputMenu;
 
 
 // route untuk halaman utama
@@ -43,3 +44,10 @@ Route::get('/rekap-operasional', [RekapOperasional::class, 'index'])
 Route::get('/item-menu', [ItemMenu::class, 'index'])->name('item.index');
 Route::post('/item-menu/store', [ItemMenu::class, 'store'])->name('item.store');
 Route::delete('/item-menu/{id}', [ItemMenu::class, 'destroy'])->name('item.destroy');
+
+ // route untuk halaman menu
+Route::get('/menu', [InputMenu::class, 'index'])->name('menu.index');
+Route::post('/menu', [InputMenu::class, 'store'])->name('menu.store');
+
+ // route untuk menghapus menu
+Route::delete('/menu/{id}', [InputMenu::class, 'destroy'])->name('menu.destroy');
