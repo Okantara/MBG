@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('menu_detail', function (Blueprint $table) {
+            $table->id();
+
+            // relasi ke menu
+            $table->foreignId('menu_id')
+                  ->constrained('menu')
+                  ->onDelete('cascade');
+
+            // relasi ke item
+            $table->foreignId('item_id')
+                  ->constrained('item')
+                  ->onDelete('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('menudetail');
+    }
+};
